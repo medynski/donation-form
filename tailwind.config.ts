@@ -21,6 +21,8 @@ const config: Config = {
       "midnight-purple-500": "#645D93",
       "midnight-purple-800": "#241E47",
       "purple-grey": "#474A62",
+      "purple-grey-200": "#F4F5FE",
+      "purple-grey-300": "#E9EAF2",
       "purple-grey-500": "#F7F6FF",
       "purple-grey-800": "#ECE9FC",
       stroke: "#E9EEF2",

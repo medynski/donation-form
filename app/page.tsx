@@ -1,11 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { Button } from "./components/Button";
-import { Banner } from "./components/Banner";
-import { DonationSummary } from "./components/DonationSummary";
-import { PeriodInput } from "./components/PeriodInput";
-import { CurrencyInput } from "./components/CurrencyInput";
-import { InputLabel } from "./components/InputLabel";
+import { DonationForm } from "./components/DonationForm";
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Home() {
@@ -35,37 +30,7 @@ export default function Home() {
           </div>
         </div>
         <div className="px-10 py-8">
-          <section>
-            <div className="flex justify-between">
-              <div>
-                <InputLabel>I can donate</InputLabel>
-                <CurrencyInput />
-              </div>
-              <div>
-                <InputLabel>Every month until</InputLabel>
-                <PeriodInput />
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-6 mt-8 ">
-            <DonationSummary amount={200000} />
-          </section>
-
-          <section className="mb-8">
-            <Banner>
-              You will be sending <span className="font-bold">$25,000</span>{" "}
-              every month, until <span className="font-bold">August 2023</span>.
-              Thank you!
-            </Banner>
-          </section>
-
-          <section className="p-2">
-            <div className="flex justify-between">
-              <Button variant="secondary">Cancel</Button>
-              <Button variant="primary">Continue</Button>
-            </div>
-          </section>
+          <DonationForm />
         </div>
       </div>
     </>

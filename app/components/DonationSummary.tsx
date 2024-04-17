@@ -1,4 +1,4 @@
-import { FunctionComponent, PropsWithChildren } from "react";
+import { FunctionComponent } from "react";
 import { Inter } from "next/font/google";
 import { formatCurrency } from "../utils/formatCurrency";
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
