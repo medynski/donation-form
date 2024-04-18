@@ -22,7 +22,7 @@ export const CurrencyInput: FunctionComponent<{
   };
 
   return (
-    <div className="input-host flex h-[60px] w-[248px] rounded-[4px] border border-solid border-stroke py-4 has-[input:focus]:!border-midnight-purple">
+    <div className="input-host flex h-[60px] w-full rounded-[4px] border border-solid border-stroke py-4 has-[input:focus]:!border-midnight-purple">
       <div className="mx-2">
         <Icon name={IconName.Dollar} />
       </div>

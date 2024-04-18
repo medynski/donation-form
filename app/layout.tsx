@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={workSans.className}>
         <div className="flex min-h-screen flex-col bg-stroke">
-          <header className="bg-blue-200 fixed left-0 top-0 h-20 w-full bg-white">
+          <header className="bg-blue-200 tb:block fixed left-0 top-0 hidden h-20 w-full bg-white">
             <Image
               className="absolute left-10 top-6"
               src="/logo.svg"

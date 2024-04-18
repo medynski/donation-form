@@ -26,23 +26,23 @@ export const DonationForm: FunctionComponent = () => {
   return (
     <>
       <section>
-        <div className="flex justify-between">
-          <div>
+        <div className="tb:flex-row flex flex-col justify-between">
+          <div className="tb:w-[248px] tb:mb-0 mb-4">
             <InputLabel>I can donate</InputLabel>
             <CurrencyInput value={amount} onValueChange={setAmount} />
           </div>
-          <div>
+          <div className="tb:w-[248px]">
             <InputLabel>Every month until</InputLabel>
             <PeriodInput period={period} onChange={setPeriod} />
           </div>
         </div>
       </section>
 
-      <section className="mb-6 mt-8">
-        <DonationSummary amount={summaryAmount} />
-      </section>
+      <section className="tb:mt-2 tb:border-none mb-8 mt-10 rounded border border-solid border-stroke">
+        <div className="py-6">
+          <DonationSummary amount={summaryAmount} />
+        </div>
 
-      <section className="mb-8">
         <Banner>
           You will be sending{" "}
           <span className="font-bold">
@@ -58,8 +58,12 @@ export const DonationForm: FunctionComponent = () => {
 
       <section className="p-2">
         <div className="flex justify-between">
-          <Button variant="secondary">Cancel</Button>
-          <Button variant="primary">Continue</Button>
+          <div className="tb:block hidden w-[238px]">
+            <Button variant="secondary">Cancel</Button>
+          </div>
+          <div className="tb:w-[238px] w-full">
+            <Button variant="primary">Continue</Button>
+          </div>
         </div>
       </section>
     </>

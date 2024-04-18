@@ -21,7 +21,7 @@ export const PeriodInput: FunctionComponent<{
   };
 
   return (
-    <div className="flex h-[60px] w-[248px] justify-between rounded-[4px] border border-solid border-stroke py-4">
+    <div className="flex h-[60px] w-full justify-between rounded-[4px] border border-solid border-stroke py-4">
       <div className="mx-2">
         <IconButton
           icon={IconName.ChevronLeft}

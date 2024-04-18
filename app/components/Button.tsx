@@ -22,7 +22,7 @@ export const Button: FunctionComponent<
 
   return (
     <div
-      className={`flex h-[52px] w-[238px] select-none items-center justify-center rounded border border-solid font-semibold hover:cursor-pointer ${additionalClasses}`}
+      className={`flex h-[52px] w-full select-none items-center justify-center rounded border border-solid font-semibold hover:cursor-pointer ${additionalClasses}`}
     >
       {children}
     </div>

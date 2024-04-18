@@ -1,14 +1,18 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { DonationForm } from "./components/DonationForm";
+import { Icon, IconName } from "./components/Icon";
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Home() {
   return (
     <>
-      <div className="h-[535px] w-[600px] rounded bg-white shadow-[0px_16px_32px_0px_#1E2A3214]">
-        <div className="flex h-32 items-center rounded-tl rounded-tr bg-salmon px-10">
-          <div>
+      <div className="tb:relative tb:h-[535px] tb:w-[600px] absolute left-0 top-0 h-full w-full rounded bg-white shadow-[0px_16px_32px_0px_#1E2A3214]">
+        <div className="tb:h-32 tb:flex-row tb:justify-start flex h-[193px] flex-col items-center justify-center rounded-tl rounded-tr bg-salmon px-10">
+          <div className="tb:hidden active:bg-salmon-100 absolute right-6 top-4 cursor-pointer rounded p-2">
+            <Icon name={IconName.Close} />
+          </div>
+          <div className="tb:mb-0 mb-4">
             <Image
               src="/giving-block.svg"
               alt="Giving block"
@@ -19,8 +23,8 @@ export default function Home() {
               priority
             />
           </div>
-          <div className="pl-5">
-            <div className="text-[32px] font-semibold text-midnight-purple">
+          <div className="tb:text-left pl-5 text-center">
+            <div className="tb:text-[32px] text-2xl font-semibold text-midnight-purple">
               The giving block
             </div>
             <div

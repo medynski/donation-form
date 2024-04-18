@@ -8,11 +8,11 @@ export const DonationSummary: FunctionComponent<{ amount: number }> = ({
 }) => {
   return (
     <div className="flex items-center justify-between px-4">
-      <div className="text-blue-grey-900 text-xl font-medium">
+      <div className="text-blue-grey-900 tb:text-xl text-base font-medium">
         Total amount:
       </div>
       <div
-        className={`max-w-72 truncate text-[32px] font-bold text-purple-grey ${inter.className}`}
+        className={`tb:text-[32px] max-w-72 truncate text-2xl font-bold text-purple-grey ${inter.className}`}
       >
         {formatCurrency(amount)}
       </div>
