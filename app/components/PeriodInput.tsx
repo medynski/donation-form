@@ -1,8 +1,8 @@
-import { FunctionComponent, useEffect, useMemo } from "react";
-import { Icon, IconName } from "./Icon";
+import { FunctionComponent, useMemo } from "react";
+import { IconName } from "./Icon";
 import { Rubik } from "next/font/google";
-import dayjs from "dayjs";
 import { IconButton } from "./IconButton";
+import { formatDate } from "../utils/formatDate";
 
 const rubik = Rubik({ subsets: ["latin"], weight: ["500"] });
 
@@ -10,14 +10,7 @@ export const PeriodInput: FunctionComponent<{
   period: number;
   onChange: (value: number) => void;
 }> = ({ period, onChange }) => {
-  const displayDate = useMemo(() => {
-    const timeDiff = dayjs().add(period, "month");
-
-    return {
-      month: timeDiff.format("MMMM"),
-      year: timeDiff.format("YYYY"),
-    };
-  }, [period]);
+  const displayDate = useMemo(() => formatDate(period), [period]);
 
   const addMonth = () => {
     onChange(period + 1);

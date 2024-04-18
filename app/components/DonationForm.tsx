@@ -6,8 +6,9 @@ import { DonationSummary } from "./DonationSummary";
 import { PeriodInput } from "./PeriodInput";
 import { CurrencyInput } from "./CurrencyInput";
 import { InputLabel } from "./InputLabel";
-import { FunctionComponent, useEffect, useMemo, useState } from "react";
+import { FunctionComponent, useMemo, useState } from "react";
 import { formatCurrency } from "./../utils/formatCurrency";
+import { formatDate } from "../utils/formatDate";
 
 export const DonationForm: FunctionComponent = () => {
   const [amount, setAmount] = useState(25000);
@@ -16,6 +17,8 @@ export const DonationForm: FunctionComponent = () => {
   const summaryAmount = useMemo(() => {
     return amount * period;
   }, [amount, period]);
+
+  const displayDate = useMemo(() => formatDate(period), [period]);
 
   return (
     <>
@@ -40,8 +43,11 @@ export const DonationForm: FunctionComponent = () => {
         <Banner>
           You will be sending{" "}
           <span className="font-bold">{formatCurrency(amount)}</span> every
-          month, until <span className="font-bold">August 2023</span>. Thank
-          you!
+          month, until{" "}
+          <span className="font-bold">
+            {displayDate.month} {displayDate.year}
+          </span>
+          . Thank you!
         </Banner>
       </section>
 

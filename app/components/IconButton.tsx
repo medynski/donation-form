@@ -8,7 +8,7 @@ export const IconButton: FunctionComponent<{
 }> = ({ icon, onClick = () => null, disabled = false }) => {
   return (
     <div
-      className={`hover:bg-purple-grey-200 active:purple-grey-300 flex h-6 w-6 items-center justify-center rounded hover:cursor-pointer ${disabled ? "!cursor-not-allowed" : ""}`}
+      className={`hover:bg-purple-grey-200 active:bg-purple-grey-300 flex h-6 w-6 items-center justify-center rounded hover:cursor-pointer ${disabled ? "!cursor-not-allowed" : ""}`}
       onClick={() => !disabled && onClick()}
     >
       <Icon name={icon} />
