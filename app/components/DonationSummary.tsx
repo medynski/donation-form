@@ -12,7 +12,7 @@ export const DonationSummary: FunctionComponent<{ amount: number }> = ({
         Total amount:
       </div>
       <div
-        className={`text-[32px] font-bold text-purple-grey ${inter.className}`}
+        className={`max-w-72 truncate text-[32px] font-bold text-purple-grey ${inter.className}`}
       >
         {formatCurrency(amount)}
       </div>

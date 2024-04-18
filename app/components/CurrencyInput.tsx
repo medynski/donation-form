@@ -1,20 +1,38 @@
-import { FunctionComponent } from "react";
+import { ChangeEvent, FunctionComponent, KeyboardEvent, useState } from "react";
 import { Icon, IconName } from "./Icon";
 import { Rubik } from "next/font/google";
 
 const rubik = Rubik({ subsets: ["latin"], weight: ["500"] });
 
-export const CurrencyInput: FunctionComponent = () => {
+export const CurrencyInput: FunctionComponent<{
+  value: string;
+  onValueChange: (value: string) => void;
+}> = ({ value, onValueChange }) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value.replace(/[^\d.]/g, "");
+    const parts = inputValue.split(".");
+    // format the integer part with commas
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    // restrict the decimal part to a maximum of 2 digits
+    if (parts[1] && parts[1].length > 2) {
+      parts[1] = parts[1].slice(0, 2);
+    }
+    onValueChange(parts.join("."));
+  };
+
   return (
-    <div className="flex h-[60px] w-[248px] rounded-[4px] border border-solid border-stroke py-4">
+    <div className="input-host flex h-[60px] w-[248px] rounded-[4px] border border-solid border-stroke py-4 has-[input:focus]:!border-midnight-purple">
       <div className="mx-2">
         <Icon name={IconName.Dollar} />
       </div>
 
       <input
-        className={`w-48 text-2xl font-medium text-purple-grey outline-0 ${rubik.className}`}
+        className={`placeholder:text-purple-grey-100 w-48  text-2xl font-medium text-purple-grey outline-0 ${rubik.className}`}
+        placeholder="0.00"
         type="text"
-        defaultValue="25,000"
+        value={value}
+        onChange={handleChange}
       />
     </div>
   );

@@ -10,11 +10,12 @@ export default function Home() {
         <div className="flex h-32 items-center rounded-tl rounded-tr bg-salmon px-10">
           <div>
             <Image
-              className="h-auto w-auto"
               src="/giving-block.svg"
               alt="Giving block"
-              width={56}
-              height={56}
+              width="0"
+              height="0"
+              sizes="100vw"
+              className="h-auto w-auto"
               priority
             />
           </div>

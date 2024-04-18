@@ -6,16 +6,19 @@ import { DonationSummary } from "./DonationSummary";
 import { PeriodInput } from "./PeriodInput";
 import { CurrencyInput } from "./CurrencyInput";
 import { InputLabel } from "./InputLabel";
-import { FunctionComponent, useMemo, useState } from "react";
+import { FunctionComponent, useMemo, useRef, useState } from "react";
 import { formatCurrency } from "./../utils/formatCurrency";
 import { formatDate } from "../utils/formatDate";
+import { convertCurrencyToFloat } from "../utils/convertCurrencyToFloat";
 
 export const DonationForm: FunctionComponent = () => {
-  const [amount, setAmount] = useState(25000);
+  const [amount, setAmount] = useState("");
   const [period, setPeriod] = useState(1);
+  const floatAmount = useRef(0);
 
   const summaryAmount = useMemo(() => {
-    return amount * period;
+    floatAmount.current = convertCurrencyToFloat(amount);
+    return floatAmount.current * period;
   }, [amount, period]);
 
   const displayDate = useMemo(() => formatDate(period), [period]);
@@ -26,7 +29,7 @@ export const DonationForm: FunctionComponent = () => {
         <div className="flex justify-between">
           <div>
             <InputLabel>I can donate</InputLabel>
-            <CurrencyInput />
+            <CurrencyInput value={amount} onValueChange={setAmount} />
           </div>
           <div>
             <InputLabel>Every month until</InputLabel>
@@ -42,8 +45,10 @@ export const DonationForm: FunctionComponent = () => {
       <section className="mb-8">
         <Banner>
           You will be sending{" "}
-          <span className="font-bold">{formatCurrency(amount)}</span> every
-          month, until{" "}
+          <span className="font-bold">
+            {formatCurrency(floatAmount.current)}
+          </span>{" "}
+          every month, until{" "}
           <span className="font-bold">
             {displayDate.month} {displayDate.year}
           </span>
