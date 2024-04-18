@@ -1,4 +1,4 @@
-import { ChangeEvent, FunctionComponent, KeyboardEvent, useState } from "react";
+import { ChangeEvent, FunctionComponent } from "react";
 import { Icon, IconName } from "./Icon";
 import { Rubik } from "next/font/google";
 
@@ -28,7 +28,7 @@ export const CurrencyInput: FunctionComponent<{
       </div>
 
       <input
-        className={`placeholder:text-purple-grey-100 w-48  text-2xl font-medium text-purple-grey outline-0 ${rubik.className}`}
+        className={`w-48 text-2xl  font-medium text-purple-grey outline-0 placeholder:text-purple-grey-100 ${rubik.className}`}
         placeholder="0.00"
         type="text"
         value={value}
