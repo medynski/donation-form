@@ -11,7 +11,7 @@ This project demonstrates my advanced expertise in React development and web per
 
 This project not only highlights my technical proficiency but also underscores my commitment to delivering high-quality, performant web applications using cutting-edge technologies.
 
-Let's check the [live demo](https://donation-form-l8e902dvi-medi71s-projects.vercel.app/).
+Let's check the [live demo](https://donation-form-96scn9kz9-medi71s-projects.vercel.app/).
 
 ## Getting Started
 
@@ -25,12 +25,6 @@ Next, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
