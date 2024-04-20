@@ -11,7 +11,7 @@ This project demonstrates my advanced expertise in React development and web per
 
 This project not only highlights my technical proficiency but also underscores my commitment to delivering high-quality, performant web applications using cutting-edge technologies.
 
-Let's check the [live demo](https://donation-form-96scn9kz9-medi71s-projects.vercel.app/).
+Let's check the [live demo](https://donation-form-next.vercel.app/).
 
 ## Getting Started
 
