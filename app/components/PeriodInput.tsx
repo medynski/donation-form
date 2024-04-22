@@ -25,7 +25,7 @@ export const PeriodInput: FunctionComponent<{
       <div className="mx-2">
         <IconButton
           icon={IconName.ChevronLeft}
-          onClick={() => subtractMonth()}
+          onClick={subtractMonth}
           disabled={period <= 1}
         />
       </div>
