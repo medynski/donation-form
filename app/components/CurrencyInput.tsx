@@ -28,7 +28,7 @@ export const CurrencyInput: FunctionComponent<{
       </div>
 
       <input
-        className={`w-10/12 text-2xl  font-medium text-purple-grey placeholder:text-purple-grey-100 focus:outline-0 tb:w-48 ${rubik.className}`}
+        className={`w-10/12 text-2xl font-medium text-purple-grey placeholder:text-purple-grey-100 focus:outline-0 tb:w-48 ${rubik.className}`}
         placeholder="0.00"
         type="text"
         value={value}
